@@ -105,3 +105,9 @@ au FileType haskell nnoremap <silent> <leader>ps :Stylishask<CR>
 au FileType haskell nnoremap <silent> <leader>ims :HsimportSymbol<CR>
 au FileType haskell nnoremap <silent> <leader>imm :HsimportModule<CR>
 
+"tabular settings
+nnoremap <leader>= :Tabularize /=<CR>
+nnoremap <leader>- :Tabularize /-><CR>
+nnoremap <leader>, :Tabularize /,<CR>
+nnoremap <leader># :Tabularize /#-}<CR>
+
