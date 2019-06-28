@@ -59,41 +59,11 @@ let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
 let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
 let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
 
-"Intero settings
-" Automatically reload on save
-au BufWritePost *.hs InteroReload
+"Ghcid settings
 
-" Lookup the type of expression under the cursor
-au FileType haskell nmap <silent> <leader>t <Plug>InteroGenericType
-au FileType haskell nmap <silent> <leader>T <Plug>InteroType
-" Insert type declaration
-au FileType haskell nnoremap <silent> <leader>ni :InteroTypeInsert<CR>
-" Show info about expression or type under the cursor
-au FileType haskell nnoremap <silent> <leader>i :InteroInfo<CR>
-
-" Open/Close the Intero terminal window
-au FileType haskell nnoremap <silent> <leader>nn :InteroOpen<CR>
-au FileType haskell nnoremap <silent> <leader>nh :InteroHide<CR>
-
-" Reload the current file into REPL
-au FileType haskell nnoremap <silent> <leader>nf :InteroLoadCurrentFile<CR>
-" Jump to the definition of an identifier
-au FileType haskell nnoremap <silent> <leader>ng :InteroGoToDef<CR>
-" Highlight uses of the identifier under cursor
-au FileType haskell nnoremap <silent> <leader>nu :InteroUses<CR>
-" Evaluate an expression in REPL
-au FileType haskell nnoremap <silent> <leader>ne :InteroEval<CR>
-
-" Start/Stop Intero
-au FileType haskell nnoremap <silent> <leader>ns :InteroStart<CR>
-au FileType haskell nnoremap <silent> <leader>nk :InteroKill<CR>
-
-" Reboot Intero, for when dependencies are added
-au FileType haskell nnoremap <silent> <leader>nr :InteroKill<CR> :InteroOpen<CR>
-
-" Managing targets
-" Prompts you to enter targets (no silent):
-au FileType haskell nnoremap <leader>nt :InteroSetTargets<CR>
+" Open/Close the Ghcid terminal window
+au FileType haskell nnoremap <silent> <leader>nn :Ghcid<CR>
+au FileType haskell nnoremap <silent> <leader>nk :GhcidKill<CR>
 
 let g:hindent_on_save = 0
 au FileType haskell nnoremap <silent> <leader>ph :Hindent<CR>
